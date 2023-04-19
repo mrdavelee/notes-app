@@ -8,6 +8,7 @@ import { v4 as uuidV4 } from 'uuid'
 import { NoteList } from "./NoteList"
 import { NoteLayout } from "./NoteLayout"
 import { Note } from "./Note"
+import { EditNote } from "./EditNote"
 
 
 export type Note = {
@@ -62,7 +63,7 @@ function App() {
         <Route path="/new" element={<NewNote onAddTag={ addTag } availableTags={ tags } onSubmit={ onCreateNote }/>}/>
         <Route path="/:id" element={<NoteLayout notes={notesWithTags}/>}>
           <Route index element={<Note />} />
-          <Route path="edit" element={<h1>edit</h1>} />
+          <Route path="/ edit" element={<EditNote onAddTag={ addTag } availableTags={ tags } onSubmit={ onUpdateNote }/>} />
         </Route>
 
         <Route path="*" element={<Navigate to="/" />} />
