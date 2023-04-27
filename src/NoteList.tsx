@@ -79,6 +79,7 @@ export function NoteList({ availableTags, notes }: NoteListProps) {
             </Col>
            ))} 
         </Row>
+        <editTagModal/>
     </>
     )
 }
@@ -100,3 +101,5 @@ function NoteCard({ id, title, tags }: SimplifiedNote ) {
         </Card.Body>
     </Card>
 }
+
+function 
